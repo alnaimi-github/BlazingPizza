@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>$(TargetFrameworkVersion)</TargetFramework>
+		<ImplicitUsings>true</ImplicitUsings>
+		<NoWarn>
+			NU1902 <!-- Disabled warning about package upgrade for Dunde Server. This is not a produciton app, so no worries. -->
+		</NoWarn>
+		<Nullable>enable</Nullable>
+		<WarningsAsErrors>nullable</WarningsAsErrors>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="$(BlazorVersion)" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="$(AspNetCoreVersion)" />
+		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="$(AspNetCoreVersion)" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="$(AspNetCoreVersion)" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="$(AspNetCoreVersion)" />
+		<PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="7.0.20" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="$(EntityFrameworkVersion)" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="$(EntityFrameworkVersion)" />
+		<PackageReference Include="WebPush" Version="1.0.12" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\BlazingPizza.Client\BlazingPizza.Client.csproj" />
+		<ProjectReference Include="..\BlazingPizza.Shared\BlazingPizza.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Migrations\" />
+	</ItemGroup>
+
+</Project>
